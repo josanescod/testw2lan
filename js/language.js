@@ -1,6 +1,7 @@
-/*codigo para cambiar el idioma de castellano a catalan, por defecto en castellano*/
+/*ejemplo de codigo para cambiar el idioma, por defecto en castellano*/
 var seleccion = 'es';
-var file = 'es.json'
+var file = 'es.json';
+
 window.onload = () => {
     cargaLenguaje(file);
     seleccionLengua();
@@ -21,7 +22,6 @@ function seleccionLengua() {
 }
 
 function cargaLenguaje(file) {
-      
     fetch(`./language/${file}`)
         .then(
             function (response) {
@@ -30,7 +30,6 @@ function cargaLenguaje(file) {
                         response.status);
                     return;
                 }
-
                 // Examine the text in the response
                 response.json().then(function (data) {
                     console.log(data);
@@ -43,19 +42,14 @@ function cargaLenguaje(file) {
         });
 
     function muestraDatos(data) {
-        let eleccion = document.querySelector('#resultado')
-        let titulo = document.querySelector('#titulo')
-        let p1 = document.querySelector('#p1')
-        let p2 = document.querySelector('#p2')
-        // array de elementos
-        let elementos = [eleccion,titulo,p1,p2];
-        let datos = [data['eleccion'],data['titulo'],data['comentario1'],data['comentario2']]
-        for (i=0;i < elementos.length;i++){
-            elementos[i].innerHTML=datos[i];
-        }
+        //Recorrer el objeto json 'data' y insertar en cada 'key' que corresponde a un elemento html su value que es el valor.
+        Object.keys(data).forEach(function (key) {
+            //console.table('key: '+ key + ', value: ' + data[key])
+            let tempKey = document.querySelector(`#${key}`)
+            tempKey.innerHTML = data[key]
+        });
+        datosIdioma = []
     }
 
 }
 
-//mejoras
-//https://stackoverflow.com/questions/37673454/javascript-iterate-key-value-from-json --> recorrer un objeto json
