@@ -3,7 +3,7 @@ var seleccion = 'es';
 var file = 'es.json';
 
 window.onload = () => {
-    cargaLenguaje(file);
+    cargaIdioma(file);
     seleccionLengua();
 }
 
@@ -13,15 +13,15 @@ function seleccionLengua() {
         seleccion = this.options[this.selectedIndex].value;
         if (seleccion === 'es') {
             file = 'es.json'
-            cargaLenguaje(file)
+            cargaIdioma(file)
         } else {
             file = 'cat.json'
-            cargaLenguaje(file);
+            cargaIdioma(file);
         }
     });
 }
 
-function cargaLenguaje(file) {
+function cargaIdioma(file) {
     fetch(`./language/${file}`)
         .then(
             function (response) {
