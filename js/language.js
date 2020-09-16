@@ -48,7 +48,6 @@ function cargaIdioma(file) {
             let tempKey = document.querySelector(`#${key}`)
             tempKey.innerHTML = data[key]
         });
-        datosIdioma = []
     }
 
 }
