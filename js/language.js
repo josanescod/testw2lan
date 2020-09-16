@@ -4,10 +4,10 @@ var file = 'es.json';
 
 window.onload = () => {
     cargaIdioma(file);
-    seleccionLengua();
+    seleccionaIdioma();
 }
 
-function seleccionLengua() {
+function seleccionaIdioma() {
     let selectLanguage = document.querySelector('#idioma')
     selectLanguage.addEventListener('change', function () {
         seleccion = this.options[this.selectedIndex].value;
