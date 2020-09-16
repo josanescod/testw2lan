@@ -41,14 +41,15 @@ function cargaIdioma(file) {
             console.log('Fetch Error :-S', err);
         });
 
-    function muestraDatos(data) {
-        //Recorrer el objeto json 'data' y insertar en cada 'key' que corresponde a un elemento html su value que es el valor.
-        Object.keys(data).forEach(function (key) {
-            //console.table('key: '+ key + ', value: ' + data[key])
-            let tempKey = document.querySelector(`#${key}`)
-            tempKey.innerHTML = data[key]
-        });
-    }
+   
 
 }
 
+function muestraDatos(data) {
+    //Recorrer el objeto json 'data' y insertar en cada 'key' que corresponde a un elemento html su value que es el valor.
+    Object.keys(data).forEach(function (key) {
+        //console.table('key: '+ key + ', value: ' + data[key])
+        let tempKey = document.querySelector(`#${key}`)
+        tempKey.innerHTML = data[key]
+    });
+}
