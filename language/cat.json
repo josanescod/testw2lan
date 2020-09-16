@@ -1,14 +1,6 @@
 {
-
-
-    "eleccio":"Has escollit l'idioma català",
-    "titol":"Benvingut a la meva pàgina de prova",
-    "comentari1":"web de prova: canviar l'idioma de la pàgina quan es fa click a un botó i amb peticions ajax",
-    "comentari2":"poc per aplicar-ho més endavant a mot. A mot ho faré desde el front-end pero la idea és passar-ho al back-end"
-    
-    
-    
-
-    
-    
-    }
+    "eleccio": "Has escollit l'idioma català",
+    "titol": "Benvingut a la meva pàgina de prova",
+    "comentari1": "web de prova: canviar l'idioma de la pàgina quan es fa click a un botó i amb peticions ajax",
+    "comentari2": "poc per aplicar-ho més endavant a mot. A mot ho faré desde el front-end pero la idea és passar-ho al back-end"
+}

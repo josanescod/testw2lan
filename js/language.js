@@ -1,60 +1,30 @@
 /*codigo para cambiar el idioma de castellano a catalan, por defecto en castellano*/
 var seleccion = 'es';
-
-
-
 window.onload = () => {
-
-    cargandoEventos();
-
+    cargaEs()
     seleccionLengua();
-
-    console.log('seleccionado lengua: ' + seleccion);
-
-}
-
-function cargandoEventos() {
-    console.log('cargando...')
 }
 
 function seleccionLengua() {
-
     let selectLanguage = document.querySelector('#idioma')
-
     selectLanguage.addEventListener('change', function () {
-       /* let opcion = document.querySelector('#resultado');
-
-        opcion.textContent = 'has elegido el idioma ' + this.options[this.selectedIndex].text;*/
         let valorIdioma = this.options[this.selectedIndex].value;
         seleccion = valorIdioma;
-
-        console.log('nueva seleccion: ' + seleccion);
-
-
-
-        //petición Ajax de un fichero local, si es cat una petición si es 'castellano' otra
-
         if (seleccion === 'es') {
-
-            cambiaEs();
+            cargaEs();
         } else {
-            cambiaCat();
+            cargaCat();
             ;
         }
-
-
     });
-
-
-
 }
 
-function cambiaEs() {
+function cargaEs() {
     fetch('./language/es.json')
         .then(
             function (response) {
                 if (response.status !== 200) {
-                    console.log('Looks like there was a problem. Status Code: ' +
+                    console.log('Ha habido algun problema. Status Code: ' +
                         response.status);
                     return;
                 }
@@ -70,25 +40,27 @@ function cambiaEs() {
             console.log('Fetch Error :-S', err);
         });
 
-        function muestraDatos(data){
-            let eleccion=document.querySelector('#resultado')
-            let titulo = document.querySelector('#titulo')
-            let p1 = document.querySelector('#p1')
-            let p2 = document.querySelector('#p2')
-            eleccion.innerHTML = data['eleccion']
-            titulo.innerHTML = data['titulo']
-            p1.innerHTML = data['comentario1']
-            p2.innerHTML = data['comentario2']
+    function muestraDatos(data) {
+        let eleccion = document.querySelector('#resultado')
+        let titulo = document.querySelector('#titulo')
+        let p1 = document.querySelector('#p1')
+        let p2 = document.querySelector('#p2')
+        // array de elementos
+        let elementos = [eleccion,titulo,p1,p2];
+        let datos = [data['eleccion'],data['titulo'],data['comentario1'],data['comentario2']]
+        for (i=0;i < elementos.length;i++){
+            elementos[i].innerHTML=datos[i];
         }
+    }
 
 }
 
-function cambiaCat() {
+function cargaCat() {
     fetch('./language/cat.json')
         .then(
             function (response) {
                 if (response.status !== 200) {
-                    console.log('Looks like there was a problem. Status Code: ' +
+                    console.log('Ha habido algun problema. Status Code: ' +
                         response.status);
                     return;
                 }
@@ -96,8 +68,7 @@ function cambiaCat() {
                 // Examine the text in the response
                 response.json().then(function (data) {
                     console.log(data);
-                    //aqui o funcion o con los datos escupirlos
-                   mostraDades(data);
+                    mostraDades(data);
                 });
             }
         )
@@ -105,19 +76,23 @@ function cambiaCat() {
             console.log('Fetch Error :-S', err);
         });
 
-        function mostraDades(data){
-            let eleccion=document.querySelector('#resultado')
-            let titulo = document.querySelector('#titulo')
-            let p1 = document.querySelector('#p1')
-            let p2 = document.querySelector('#p2')
-            eleccion.innerHTML = data['eleccio']
-            titulo.innerHTML = data['titol']
-            p1.innerHTML = data['comentari1']
-            p2.innerHTML = data['comentari2']
+    function mostraDades(data) {
+        let eleccion = document.querySelector('#resultado')
+        let titulo = document.querySelector('#titulo')
+        let p1 = document.querySelector('#p1')
+        let p2 = document.querySelector('#p2')
+        // array de elementos
+        let elementos = [eleccion,titulo,p1,p2];
+        let datos = [data['eleccio'],data['titol'],data['comentari1'],data['comentari2']]
+        for (i=0;i < elementos.length;i++){
+            elementos[i].innerHTML=datos[i];
         }
+    }
 
 
 }
 
 
-
+//mejoras
+//https://stackoverflow.com/questions/50983150/how-to-pass-a-variable-with-url-on-javascript-fetch-method --> pasar variable a fetch?
+//https://stackoverflow.com/questions/37673454/javascript-iterate-key-value-from-json --> recorrer un objeto json
