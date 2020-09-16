@@ -1,0 +1,15 @@
+{
+
+
+
+"eleccion": "Has elegido el idioma castellano",    
+"titulo":"Bienvenido a mi pagina web",
+"comentario1":"web de prueba: cambiar el idioma de la pagina cuando hacemos click en un boton, y con peticiones ajax",
+"comentario2":"prueba de concepto para aplicarlo mas adelante en mot. En mot yo lo haré en frontend pero la idea es pasarlo al back"
+
+
+
+
+
+
+}
