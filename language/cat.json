@@ -1,6 +1,6 @@
 {
-    "eleccio": "Has escollit l'idioma català",
-    "titol": "Benvingut a la pàgina de prova",
-    "comentari1": "web de prova: canviar l'idioma de la pàgina quan es fa click a un botó i peticions ajax",
-    "comentari2": "poc per aplicar-ho més endavant a web1. A web1 ho fará desde el front-end pero la idea és passar-ho al back-end"
+    "eleccion": "Has escollit l'idioma català",
+    "titulo": "Benvingut a la pàgina de prova",
+    "comentario1": "web de prova: canviar l'idioma de la pàgina quan es fa click a un botó i peticions ajax",
+    "comentario2": "poc per aplicar-ho més endavant a web1. A web1 ho fará desde el front-end pero la idea és passar-ho al back-end"
 }
